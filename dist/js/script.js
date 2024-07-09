@@ -6,12 +6,8 @@ window.onscroll = function () {
 
    if (window.pageYOffset > fixedNav) {
       header.classList.add("navbar-fixed");
-      toTop.classList.remove("hidden");
-      toTop.classList.add("flex");
    } else {
       header.classList.remove("navbar-fixed");
-      toTop.classList.remove("flex");
-      toTop.classList.add("hidden");
    }
 };
 
@@ -31,3 +27,14 @@ window.addEventListener("click", function (e) {
       navMenu.classList.add("hidden");
    }
 });
+
+function start() {
+   chrome.runtime.sendMessage("hello", (result) => {
+      console.log(result);
+   });
+}
+
+async function startAsync() {
+   const result = await chrome.runtime.sendMessage("hello");
+   console.log(result);
+}

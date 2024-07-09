@@ -11,6 +11,86 @@
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+   <!-- CSS Ribbon Design Strat -->
+   <style>
+      .img-card {
+         position: relative;
+      }
+
+      .img-card .ribbon {
+         position: absolute;
+         width: 88px;
+         height: 35px;
+         background: #4070f4;
+         top: 18px;
+         left: -9.5px;
+         border-radius: 6px;
+         border-bottom-left-radius: 0;
+      }
+
+      .img-card .ribbon::before {
+         position: absolute;
+         content: "";
+         width: 0;
+         height: 0;
+         background: transparent;
+         top: 15px;
+         border-top-left-radius: 10px;
+         border-bottom-left-radius: 10px;
+         z-index: 2;
+      }
+
+      .img-card .ribbon::after {
+         position: absolute;
+         content: "";
+         width: 0;
+         height: 0;
+         border-left: 10px solid transparent;
+         border-top: 8px solid #2d4a9c;
+         top: 35px;
+         left: 0;
+         z-index: 1;
+      }
+
+      .img-card .ribbon b {
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         color: #fff;
+         text-transform: capitalize;
+         font-size: 12px;
+         letter-spacing: 1px;
+         font-family: sans-serif;
+         font-weight: 500;
+      }
+
+      .card.premium .ribbon {
+         background: #FB8351;
+      }
+
+      .card.premium .ribbon::before {
+         background: #FB8351;
+      }
+
+      .card.premium .ribbon::after {
+         border-top: 8px solid #CC5524;
+      }
+
+      .card.freebies .ribbon {
+         background: #27AE60;
+      }
+
+      .card.freebies .ribbon::before {
+         background: #27AE60;
+      }
+
+      .card.freebies .ribbon::after {
+         border-top: 8px solid #056062;
+      }
+   </style>
+   <!-- CSS Ribbon Design End -->
+
 </head>
 
 <body>
@@ -79,10 +159,10 @@
    </header>
    <!-- Header End -->
 
-   <!-- Hero Section Start -->
-   <main class="pt-28 bg-lightblue">
+   <main class="pt-28 pb-14 bg-lightblue">
+      <!-- Hero Section Start -->
       <section class="container mx-auto px-4 sm:px-6 lg:px-14 lg:max-w-screen-2xl">
-         <!-- Breadcrumb -->
+         <!-- Breadcrumb Start -->
          <ol class="flex items-center whitespace-nowrap">
             <li class="inline-flex items-center">
                <a class="flex items-center text-sm font-medium text-grey hover:text-primary hover:font-semibold dark:text-neutral-500"
@@ -99,8 +179,9 @@
                Product Details
             </li>
          </ol>
+         <!-- Breadcrumb End -->
 
-         <!-- Banner -->
+         <!-- Banner Start -->
          <div class="lg:flex bg-transparent pt-6 lg:pt-9 mx-auto w-full justify-between lg:max-w-screen-2xl">
             <div class="bg-transparent">
                <div class="flex bg-white p-3 lg:p-6 rounded-3xl w-auto lg:w-[840px]">
@@ -237,8 +318,11 @@
                <h4 class="pt-3 text-sm md:text-base text-[#8B8B8B]">9225 people like this</h4>
             </div>
          </div>
+         <!-- Banner End -->
       </section>
+      <!-- Hero Section End -->
 
+      <!-- Discount Section Start -->
       <section class="container mx-auto px-4 sm:px-6 lg:px-14 lg:max-w-screen-2xl pt-0 lg:pt-10">
          <div
             class="relative items-center md:justify-between lg:justify-between md:flex lg:flex gap-8 p-6 md:p-6 lg:p-8 rounded-3xl h-auto bg-gradient-to-r from-[#4E68DB] via-[#9E3F95] to-[#DE1F5D]">
@@ -253,8 +337,10 @@
             </button>
          </div>
       </section>
+      <!-- Discount Section End -->
 
-      <!-- Overview Section -->
+
+      <!-- Overview Section Start -->
       <section class="bg-transparent container mx-auto px-4 sm:px-6 lg:px-14 lg:max-w-screen-2xl pt-6 lg:pt-14">
          <div class="bg-white p-6 lg:p-3 lg:px-6 lg:pt-7 lg:pb-6 rounded-3xl w-full">
             <div class="flex gap-3">
@@ -417,7 +503,9 @@
             </div>
          </div>
       </section>
+      <!-- Overview Section End -->
 
+      <!-- Extra Section Start -->
       <section class="bg-transparent container mx-auto px-4 sm:px-6 lg:px-14 lg:max-w-screen-2xl pt-6 lg:pt-14">
          <div class="bg-transparent lg:px-6 lg:pt-14 lg:pb-6">
             <div class="lg:flex flex items-center justify-between">
@@ -436,8 +524,11 @@
             </div>
             <div class="lg:flex gap-8">
                <div class="flex pt-6 justify-between w-auto">
-                  <div class="bg-white p-5 rounded-2xl">
-                     <img src="dist/images/card-image-one.svg" alt="small-banner" class="w-full rounded-md">
+                  <div class="bg-white p-5 rounded-2xl card premium">
+                     <div class="img-card">
+                        <img src="dist/images/card-image-one.svg" alt="small-banner" class="w-full rounded-md">
+                        <span class="ribbon"><b>Premium</b></span>
+                     </div>
                      <h3 class="text-base mt-4 mb-2 font-semibold text-dark line-clamp-1">ShaLearn - Course Landing Page
                         Design
                      </h3>
@@ -448,8 +539,11 @@
                   </div>
                </div>
                <div class="flex pt-6 justify-between w-auto">
-                  <div class="bg-white p-5 rounded-2xl">
-                     <img src="dist/images/card-image-two.svg" alt="small-banner" class="w-full rounded-md">
+                  <div class="bg-white p-5 rounded-2xl card freebies">
+                     <div class="img-card">
+                        <img src="dist/images/card-image-two.svg" alt="small-banner" class="w-full rounded-md">
+                        <span class="ribbon"><b>Freebies</b></span>
+                     </div>
                      <h3 class="text-base mt-4 mb-2 font-semibold text-dark line-clamp-1">ShaLearn - Course Landing Page
                         Design
                      </h3>
@@ -460,8 +554,11 @@
                   </div>
                </div>
                <div class="flex pt-6 justify-between w-auto">
-                  <div class="bg-white p-5 rounded-2xl">
-                     <img src="dist/images/card-image-three.svg" alt="small-banner" class="w-full rounded-md">
+                  <div class="bg-white p-5 rounded-2xl card freebies">
+                     <div class="img-card">
+                        <img src="dist/images/card-image-three.svg" alt="small-banner" class="w-full rounded-md">
+                        <span class="ribbon"><b>Freebies</b></span>
+                     </div>
                      <h3 class="text-base mt-4 mb-2 font-semibold text-dark line-clamp-1">ShaLearn - Course Landing Page
                         Design
                      </h3>
@@ -472,8 +569,11 @@
                   </div>
                </div>
                <div class="flex pt-6 justify-between w-auto">
-                  <div class="bg-white p-5 rounded-2xl">
-                     <img src="dist/images/card-image-four.svg" alt="small-banner" class="w-full rounded-md">
+                  <div class="bg-white p-5 rounded-2xl card freebies">
+                     <div class="img-card">
+                        <img src="dist/images/card-image-four.svg" alt="small-banner" class="w-full rounded-md">
+                        <span class="ribbon"><b>Freebies</b></span>
+                     </div>
                      <h3 class="text-base mt-4 mb-2 font-semibold text-dark line-clamp-1">ShaLearn - Course Landing Page
                         Design
                      </h3>
@@ -487,11 +587,11 @@
             </div>
          </div>
       </section>
+      <!-- Extra Section End -->
    </main>
    <!-- Hero Section End -->
 
    <script src="dist/js/script.js"></script>
-
 </body>
 
 </html>
